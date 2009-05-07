@@ -1,13 +1,14 @@
 package gbc.i18n.ua;
 
 import static org.junit.Assert.assertEquals;
+import gbc.i18n.AbstractTranscoderTest;
 import gbc.i18n.Transcoder;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UkrainianTranscoderTest {
+public class UkrainianTranscoderTest extends AbstractTranscoderTest {
 
 	public static final String TEST_DATA = "Польськa Mовa за 4 Tижні";
 	public static final String TEST_DATA_ENTITIES = "&#1055;&#1086;&#1083;&#1100;&#1089;&#1100;&#1082;a M&#1086;&#1074;a &#1079;&#1072; 4 T&#1080;&#1078;&#1085;&#1110;";
@@ -37,19 +38,8 @@ public class UkrainianTranscoderTest {
 	}
 
 	@Test
-	public void testFromEntitiesToNative() {
-		assertEquals(TEST_DATA, transcoder.fromEntitiesToNative(TEST_DATA_ENTITIES));
-	}
-
-	@Test
-	public void testFromNativeToEntities() {
-		assertEquals(TEST_DATA_ENTITIES, transcoder.fromNativeToEntities(TEST_DATA));
-	}
-
-	@Test
-	public void testPangrams() {
-		for (String pangram : PANGRAMS) {
-			assertEquals(pangram, transcoder.fromEntitiesToNative(transcoder.fromNativeToEntities(pangram)));
-		}
+	public void testEntitiesAndNative() {
+		testEntitiesAndNative(transcoder, TEST_DATA, TEST_DATA_ENTITIES);
+		testPangrams(transcoder, PANGRAMS);
 	}
 }

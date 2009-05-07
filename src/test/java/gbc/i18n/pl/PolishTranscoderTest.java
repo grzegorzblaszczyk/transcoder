@@ -37,10 +37,7 @@ public class PolishTranscoderTest extends AbstractTranscoderTest {
 	@Test
 	public void testEntitiesAndNative() {
 		testEntitiesAndNative(transcoder, TEST_DATA, TEST_DATA_ENTITIES);
+		testPangrams(transcoder, PANGRAMS);
 	}
 	
-	@Test
-	public void testPangrams() {
-		super.testPangrams(transcoder, PANGRAMS);
-	}
 }
