@@ -2,8 +2,10 @@ package gbc.i18n;
 
 import static org.junit.Assert.*;
 import gbc.i18n.Decoder;
-import gbc.i18n.pl.PolishDecoder;
-import gbc.i18n.pl.PolishDecoderTest;
+import gbc.i18n.de.GermanTranscoder;
+import gbc.i18n.de.GermanTranscoderTest;
+import gbc.i18n.pl.PolishTranscoderTest;
+import gbc.i18n.pl.PolishTranscoder;
 import gbc.i18n.ru.RussianTranscoder;
 import gbc.i18n.ru.RussianTranscoderTest;
 import gbc.i18n.ua.UkrainianTranscoder;
@@ -27,28 +29,37 @@ public class PerformanceTest {
 	}
 
 	@Test
-	public void testDecodePerformance() {
+	public void testPerformance() {
 
 		System.out.println("Testing PolishDecoder speed...");
-		stressTest(new PolishDecoder(), PolishDecoderTest.TEST_DATA);
-
+		Transcoder polishTranscoder = new PolishTranscoder();
+		stressTest(polishTranscoder, PolishTranscoderTest.TEST_DATA);
+		System.out.println("Testing PolishTranscoder speed...");
+		stressTest(polishTranscoder, PolishTranscoderTest.TEST_DATA);
+		
 		RussianTranscoder russianTranscoder = new RussianTranscoder();
 		System.out.println("Testing RussianDecoder speed...");
-		stressTest((Decoder)russianTranscoder, RussianTranscoderTest.TEST_DATA);
+		stressTest((Decoder) russianTranscoder, RussianTranscoderTest.TEST_DATA);
 		System.out.println("Testing RussianTranscoder speed...");
 		stressTest(russianTranscoder, RussianTranscoderTest.TEST_DATA);
 
 		UkrainianTranscoder ukrainianTranscoder = new UkrainianTranscoder();
-    System.out.println("Testing UkrainianDecoder speed...");
-    stressTest((Decoder)ukrainianTranscoder, UkrainianTranscoderTest.TEST_DATA);
-    System.out.println("Testing UkrainianTranscoder speed...");
-    stressTest(ukrainianTranscoder, UkrainianTranscoderTest.TEST_DATA);
+		System.out.println("Testing UkrainianDecoder speed...");
+		stressTest((Decoder) ukrainianTranscoder,
+				UkrainianTranscoderTest.TEST_DATA);
+		System.out.println("Testing UkrainianTranscoder speed...");
+		stressTest(ukrainianTranscoder, UkrainianTranscoderTest.TEST_DATA);
 
+		GermanTranscoder germanTranscoder = new GermanTranscoder();
+		System.out.println("Testing GermanDecoder speed...");
+		stressTest((Decoder) germanTranscoder, GermanTranscoderTest.TEST_DATA);
+		System.out.println("Testing GermanTranscoder speed...");
+		stressTest(germanTranscoder, GermanTranscoderTest.TEST_DATA);
 	}
 
 	private void stressTest(Decoder decoder, final String testData) {
 		long start = System.currentTimeMillis();
-		for (int i=0; i<EXECUTION_COUNT; i++) {
+		for (int i = 0; i < EXECUTION_COUNT; i++) {
 			@SuppressWarnings("unused")
 			String expected = decoder.decode(testData);
 		}
@@ -58,14 +69,14 @@ public class PerformanceTest {
 
 	private void stressTest(Transcoder transcoder, final String testData) {
 		long start = System.currentTimeMillis();
-		for (int i=0; i<EXECUTION_COUNT; i++) {
+		for (int i = 0; i < EXECUTION_COUNT; i++) {
 			@SuppressWarnings("unused")
 			String expected = transcoder.fromNativeToEntities(testData);
 		}
 		long end = System.currentTimeMillis();
 		assertTime(start, end);
 		start = System.currentTimeMillis();
-		for (int i=0; i<EXECUTION_COUNT; i++) {
+		for (int i = 0; i < EXECUTION_COUNT; i++) {
 			@SuppressWarnings("unused")
 			String expected = transcoder.fromEntitiesToNative(testData);
 		}
@@ -74,11 +85,13 @@ public class PerformanceTest {
 	}
 
 	private void assertTime(long start, long end) {
-		long timeDiff = (end-start);
-		double executionTime = (timeDiff/(EXECUTION_COUNT));
-		System.out.println("Test duration: " + timeDiff + " ms , single execution time: " + executionTime + " ms");
-		assertTrue("Decoding is too slow !!!!!! \n It should be less than " + MAXIMUM_EXECUTION_TIME_IN_MILLIS + " ms.",
-				   timeDiff < MAXIMUM_EXECUTION_TIME_IN_MILLIS);
+		long timeDiff = (end - start);
+		double executionTime = (timeDiff / (EXECUTION_COUNT));
+		System.out.println("Test duration: " + timeDiff
+				+ " ms , single execution time: " + executionTime + " ms");
+		assertTrue("Decoding is too slow !!!!!! \n It should be less than "
+				+ MAXIMUM_EXECUTION_TIME_IN_MILLIS + " ms.",
+				timeDiff < MAXIMUM_EXECUTION_TIME_IN_MILLIS);
 	}
 
 }

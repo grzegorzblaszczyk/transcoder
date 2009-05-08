@@ -1,10 +1,8 @@
 package gbc.i18n.ru;
 
-import org.apache.commons.lang.StringUtils;
+import gbc.i18n.AbstractTranscoder;
 
-import gbc.i18n.Transcoder;
-
-public class RussianTranscoder implements Transcoder {
+public class RussianTranscoder extends AbstractTranscoder {
 	
 	private static final String[][] UNICODE_TRANSCODE_TABLE={
 		{"\u0410","A","&#1040;"},
@@ -74,28 +72,8 @@ public class RussianTranscoder implements Transcoder {
 	};
 
 	@Override
-	public String decode(String input) {
-		String output = input;
-		output = transcode(output, 0, 1);
-		return output;
-	}
-
-	@Override
-	public String fromNativeToEntities(String input) {
-		return transcode(input, 0, 2);
-	}
-
-	
-	@Override
-	public String fromEntitiesToNative(String input) {
-		return transcode(input, 2, 0);
-	}
-
-	private String transcode(String output, int sourceColumn, int destinationColumn) {
-		for (int i=0; i<UNICODE_TRANSCODE_TABLE.length; i++) {
-			output = StringUtils.replace(output, UNICODE_TRANSCODE_TABLE[i][sourceColumn], UNICODE_TRANSCODE_TABLE[i][destinationColumn]);
-		}
-		return output;
+	protected String transcode(final String input, int sourceColumn, int destinationColumn) {
+		return transcode(input, UNICODE_TRANSCODE_TABLE, sourceColumn, destinationColumn);
 	}
 
 }
