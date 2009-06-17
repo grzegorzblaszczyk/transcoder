@@ -7,17 +7,17 @@
   <artifactId>transcoder</artifactId>
   <name>Transcoder</name>
   <packaging>jar</packaging>
-  <version>1.1</version>
+  <version>1.2</version>
   <description>
   </description>
-  <url>http://transcoder.java.blaszczyk-consulting.pl</url>
+  <url>http://github.com/grzegorzblaszczyk/transcoder/</url>
   <issueManagement>
     <system>Tracker</system>
-    <url>http://mercurial.blaszczyk-consulting.pl</url>
+    <url>http://wiki.github.com/grzegorzblaszczyk/transcoder</url>
   </issueManagement>
   <ciManagement>
-    <system>mercurial</system>
-    <url>http://mercurial.blaszczyk-consulting.pl/hg/transcoder</url>
+    <system>git</system>
+    <url>git://github.com/grzegorzblaszczyk/transcoder.git</url>
   </ciManagement>
   <developers>
 
@@ -37,9 +37,9 @@
   </developers>
 
   <scm>
-    <url>http://mercurial.blaszczyk-consulting.pl/hg/transcoder</url>
-    <connection>scm:svn+ssh://[user]@mercurial.blaszczyk-consulting.pl/hg/transcoder</connection>
-    <developerConnection>scm:svn+ssh://[user]@mercurial.blaszczyk-consulting.pl/hg/transcoder</developerConnection>
+    <url>git://github.com/grzegorzblaszczyk/transcoder.git</url>
+    <connection>git://github.com/grzegorzblaszczyk/transcoder.git</connection>
+    <developerConnection>git@github.com:[user]/transcoder.git</developerConnection>
   </scm>
   <organization>
     <name>Grzegorz Błaszczyk Consulting</name>
@@ -67,43 +67,15 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          
-          <archive>
-            <manifest>
-              <mainClass>pl.blaszczyk-consulting.i18n.transcoder.Main</mainClass>
-              <addClasspath>true</addClasspath>
-              <classpathPrefix>lib</classpathPrefix>
-            </manifest>
-          </archive>
-
-        </configuration>
         <executions>
           <execution>
             <goals>
+              <goal>jar</goal>
               <goal>test-jar</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
-      <!--
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptors>
-            <descriptor>src/assembly/dist.xml</descriptor>
-          </descriptors>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>attached</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      -->
 
     </plugins>
   </build>
@@ -137,9 +109,6 @@
     </dependency>
 
     <!-- ### PROVIDED DEPENDENCIES ### -->
-
-
-
 
     <dependency>
       <groupId>commons-lang</groupId>
@@ -212,7 +181,7 @@
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
         <configuration>
-          <locales>en,pl,de,ua,ru</locales>
+          <locales>en,pl,de,ua,ru,es</locales>
           <inputEncoding>utf-8</inputEncoding>
           <outputEncoding>utf-8</outputEncoding>
         </configuration>
