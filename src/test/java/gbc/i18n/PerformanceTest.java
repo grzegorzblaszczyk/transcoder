@@ -1,11 +1,12 @@
 package gbc.i18n;
 
-import static org.junit.Assert.*;
-import gbc.i18n.Decoder;
+import static org.junit.Assert.assertTrue;
 import gbc.i18n.de.GermanTranscoder;
 import gbc.i18n.de.GermanTranscoderTest;
-import gbc.i18n.pl.PolishTranscoderTest;
+import gbc.i18n.es.SpanishTranscoder;
+import gbc.i18n.es.SpanishTranscoderTest;
 import gbc.i18n.pl.PolishTranscoder;
+import gbc.i18n.pl.PolishTranscoderTest;
 import gbc.i18n.ru.RussianTranscoder;
 import gbc.i18n.ru.RussianTranscoderTest;
 import gbc.i18n.ua.UkrainianTranscoder;
@@ -36,7 +37,7 @@ public class PerformanceTest {
 		stressTest(polishTranscoder, PolishTranscoderTest.TEST_DATA);
 		System.out.println("Testing PolishTranscoder speed...");
 		stressTest(polishTranscoder, PolishTranscoderTest.TEST_DATA);
-		
+
 		RussianTranscoder russianTranscoder = new RussianTranscoder();
 		System.out.println("Testing RussianDecoder speed...");
 		stressTest((Decoder) russianTranscoder, RussianTranscoderTest.TEST_DATA);
@@ -55,6 +56,12 @@ public class PerformanceTest {
 		stressTest((Decoder) germanTranscoder, GermanTranscoderTest.TEST_DATA);
 		System.out.println("Testing GermanTranscoder speed...");
 		stressTest(germanTranscoder, GermanTranscoderTest.TEST_DATA);
+
+    SpanishTranscoder spanishTranscoder = new SpanishTranscoder();
+    System.out.println("Testing SpanishDecoder speed...");
+    stressTest((Decoder) spanishTranscoder, SpanishTranscoderTest.TEST_DATA);
+    System.out.println("Testing SpanishTranscoder speed...");
+    stressTest(spanishTranscoder, SpanishTranscoderTest.TEST_DATA);
 	}
 
 	private void stressTest(Decoder decoder, final String testData) {
