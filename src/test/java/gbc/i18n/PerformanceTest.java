@@ -2,27 +2,37 @@ package gbc.i18n;
 
 import static org.junit.Assert.assertTrue;
 import gbc.i18n.de.GermanTranscoder;
-import gbc.i18n.de.GermanTranscoderTest;
 import gbc.i18n.es.SpanishTranscoder;
-import gbc.i18n.es.SpanishTranscoderTest;
+import gbc.i18n.fr.FrenchTranscoder;
 import gbc.i18n.pl.PolishTranscoder;
-import gbc.i18n.pl.PolishTranscoderTest;
 import gbc.i18n.ru.RussianTranscoder;
-import gbc.i18n.ru.RussianTranscoderTest;
 import gbc.i18n.ua.UkrainianTranscoder;
-import gbc.i18n.ua.UkrainianTranscoderTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PerformanceTest {
 
+  public static Logger logger = Logger.getLogger(PerformanceTest.class);
+
 	private static final int EXECUTION_COUNT = 10000;
 	private static final int MAXIMUM_EXECUTION_TIME_IN_MILLIS = 1000;
+  private List<Transcoder> transcoders;
 
 	@Before
 	public void setUp() throws Exception {
+	  transcoders = new ArrayList<Transcoder>();
+	  transcoders.add(new GermanTranscoder());
+	  transcoders.add(new SpanishTranscoder());
+	  transcoders.add(new FrenchTranscoder());
+	  transcoders.add(new PolishTranscoder());
+	  transcoders.add(new RussianTranscoder());
+	  transcoders.add(new UkrainianTranscoder());
 	}
 
 	@After
@@ -30,38 +40,16 @@ public class PerformanceTest {
 	}
 
 	@Test
-	public void testPerformance() {
+	public void testPerformance() throws ClassNotFoundException, IllegalArgumentException, SecurityException, IllegalAccessException {
 
-		System.out.println("Testing PolishDecoder speed...");
-		Transcoder polishTranscoder = new PolishTranscoder();
-		stressTest(polishTranscoder, PolishTranscoderTest.TEST_DATA);
-		System.out.println("Testing PolishTranscoder speed...");
-		stressTest(polishTranscoder, PolishTranscoderTest.TEST_DATA);
-
-		RussianTranscoder russianTranscoder = new RussianTranscoder();
-		System.out.println("Testing RussianDecoder speed...");
-		stressTest((Decoder) russianTranscoder, RussianTranscoderTest.TEST_DATA);
-		System.out.println("Testing RussianTranscoder speed...");
-		stressTest(russianTranscoder, RussianTranscoderTest.TEST_DATA);
-
-		UkrainianTranscoder ukrainianTranscoder = new UkrainianTranscoder();
-		System.out.println("Testing UkrainianDecoder speed...");
-		stressTest((Decoder) ukrainianTranscoder,
-				UkrainianTranscoderTest.TEST_DATA);
-		System.out.println("Testing UkrainianTranscoder speed...");
-		stressTest(ukrainianTranscoder, UkrainianTranscoderTest.TEST_DATA);
-
-		GermanTranscoder germanTranscoder = new GermanTranscoder();
-		System.out.println("Testing GermanDecoder speed...");
-		stressTest((Decoder) germanTranscoder, GermanTranscoderTest.TEST_DATA);
-		System.out.println("Testing GermanTranscoder speed...");
-		stressTest(germanTranscoder, GermanTranscoderTest.TEST_DATA);
-
-    SpanishTranscoder spanishTranscoder = new SpanishTranscoder();
-    System.out.println("Testing SpanishDecoder speed...");
-    stressTest((Decoder) spanishTranscoder, SpanishTranscoderTest.TEST_DATA);
-    System.out.println("Testing SpanishTranscoder speed...");
-    stressTest(spanishTranscoder, SpanishTranscoderTest.TEST_DATA);
+    for (Transcoder transcoder : transcoders) {
+      Class<?> transcoderTestClass = Class.forName(transcoder.getClass().getName() + "Test");
+      String testData = (String)transcoderTestClass.getDeclaredFields()[0].get(new String());
+      logger.info("Testing " + transcoder.getClass().getName() + " decoding speed...");
+      stressTest((Decoder)transcoder, testData);
+      logger.info("Testing " + transcoder.getClass().getName() + " transcoding speed...");
+      stressTest(transcoder, testData);
+    }
 	}
 
 	private void stressTest(Decoder decoder, final String testData) {
