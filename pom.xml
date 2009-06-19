@@ -51,6 +51,14 @@
     </license>
   </licenses>
 
+  <distributionManagement>
+    <repository>
+      <id>empik-atm</id>
+      <name>Empik ATM Maven repository</name>
+      <url>scp://77.79.217.249/var/www/app-stg1.empik.pl/maven2</url>
+    </repository>
+  </distributionManagement>
+
   <build>
     <plugins>
       <plugin>
@@ -98,6 +106,13 @@
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+         <artifactId>wagon-ssh-external</artifactId>
+         <version>1.0-alpha-5</version>
+      </extension>
+    </extensions>
   </build>
 
   <profiles>
