@@ -26,7 +26,7 @@
    </appender>
 
    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
-      <param name="File" value="log/data-importer.log" />
+      <param name="File" value="log/transcoder.log" />
       <param name="DatePattern" value="'.'yyyy-MM-dd" />
       <param name="Threshold" value="TRACE"/>
 
