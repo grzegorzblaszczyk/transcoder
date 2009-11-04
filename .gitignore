@@ -1,0 +1,7 @@
+target
+target/* # Ignore target dir
+log
+log/* #Ignore log dir
+*.log
+*.class
+!.gitignore # except for .gitignore
