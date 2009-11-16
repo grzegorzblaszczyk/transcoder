@@ -2,6 +2,7 @@ target
 target/* # Ignore target dir
 log
 log/* #Ignore log dir
+cobertura.ser
 *.log
 *.class
 !.gitignore # except for .gitignore

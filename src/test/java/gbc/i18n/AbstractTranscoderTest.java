@@ -1,6 +1,7 @@
 package gbc.i18n;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 
@@ -21,7 +22,9 @@ public abstract class AbstractTranscoderTest {
 	
 	protected void testEntitiesAndNative(Transcoder transcoder,
 			final String testData, final String testDataEntities) {
-		assertEquals(testData, transcoder.fromEntitiesToNative(testDataEntities));
+		String entitiesToNative = transcoder.fromEntitiesToNative(testDataEntities);
+		assertTrue(!entitiesToNative.contains("&#"));
+		assertEquals(testData, entitiesToNative);
 		assertEquals(testDataEntities, transcoder.fromNativeToEntities(testData));
 	}
 }

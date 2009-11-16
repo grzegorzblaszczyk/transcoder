@@ -1,0 +1,21 @@
+ ------
+Transcoder Manual
+ ------
+
+Simple Example
+
+  To apply Transcoder easily in your projects simply add <<transcoder-1.3.1.jar>> to your classpath and use it as in the following example:
+
+%{snippet|id=usage|url=file:///home/deer/workspace-sts/transcoder/src/test/java/gbc/i18n/SimpleExample.java}
+
+Try it out
+
+  [[1]] Download the latest distribution from: {{{http://cloud.github.com/downloads/grzegorzblaszczyk/jtimecalc/jtimecalc-1.3.1-dist.zip} here}}
+  
+  [[2]] Unzip it:
+  <<<unzip jtimecalc-1.3.1-dist.zip>>>
+  
+  [[3]] Run it:
+  <<<./run.sh>>>
+  
+  
