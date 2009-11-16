@@ -14,6 +14,9 @@ public class SimpleExample {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		// START SNIPPET: usage
+		
 		// German
 		GermanTranscoder german = new GermanTranscoder();
 		System.out.println(german.decode("Victor jagt zwölf Boxkämpfer")); // result: Victor jagt zwoelf Boxkaempfer
@@ -49,7 +52,8 @@ public class SimpleExample {
 		System.out.println(ukrainian.decode("Чуєш їх, доцю, га? Кумедна ж ти, прощайся без ґольфів!")); // result: CHuesh ih, dotsu, ga? Kumedna zh ti, proshchaisa bez golfiv!
 		System.out.println(ukrainian.fromNativeToEntities("Чуєш їх, доцю, га? Кумедна ж ти, прощайся без ґольфів!")); // result: &#1051;&#1102&#1073;&#1103;, &#1089;&#1098;&#1077;&#1096;&#1100; &#1097;&#1080;&#1087;&#1094;&#1099;, — &#1074;&#1079;&#1076;&#1086;&#1093;&#1085;ё&#1090; &#1084;&#1101;&#1088;, — &#1082;&#1072;&#1081;&#1092; &#1078;&#1075;&#1091;&#1095;.
 		System.out.println(ukrainian.fromEntitiesToNative("&#1063;&#1091;&#1108;&#1096; &#1111;&#1093;, &#1076;&#1086;&#1094;&#1102, &#1075;&#1072;? &#1050;&#1091;&#1084;&#1077;&#1076;&#1085;&#1072; &#1078; &#1090;&#1080;, &#1087;&#1088;&#1086;&#1097;&#1072;&#1081;&#1089;&#1103; &#1073;&#1077;&#1079; &#1169;&#1086;&#1083;&#1100;&#1092;&#1110;&#1074;!")); // result: Чуєш їх, доцю, га? Кумедна ж ти, прощайся без ґольфів!
-		
+
+		// END SNIPPET: usage
 	}
 
 }
