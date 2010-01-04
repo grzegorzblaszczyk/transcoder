@@ -13,6 +13,7 @@
 <a name="4" href="#4">4</a>   
 <a name="5" href="#5">5</a>   <strong>public</strong> <strong>class</strong> <a href="../../../gbc/i18n/pl/PolishTranscoder.html">PolishTranscoder</a> <strong>extends</strong> <a href="../../../gbc/i18n/AbstractTranscoder.html">AbstractTranscoder</a> {
 <a name="6" href="#6">6</a>   
+<<<<<<< HEAD:xref/gbc/i18n/pl/PolishTranscoder.html
 <a name="7" href="#7">7</a>   	<strong>private</strong> <strong>static</strong> <strong>final</strong> String[][] UNICODE_TRANSCODE_TABLE = {
 <a name="8" href="#8">8</a>   		{<span class="string">"\u00d3"</span>,<span class="string">"O"</span>,<span class="string">"&amp;#211;"</span>},
 <a name="9" href="#9">9</a>   		{<span class="string">"\u00f3"</span>,<span class="string">"o"</span>,<span class="string">"&amp;#243;"</span>},
@@ -34,6 +35,29 @@
 <a name="25" href="#25">25</a>    	{<span class="string">"\u017c"</span>,<span class="string">"z"</span>,<span class="string">"&amp;#380;"</span>},
 <a name="26" href="#26">26</a>    };
 <a name="27" href="#27">27</a>  
+=======
+<a name="7" href="#7">7</a>   	<strong>private</strong> <strong>static</strong> <strong>final</strong> String[][] UNICODE_TRANSCODE_TABLE={
+<a name="8" href="#8">8</a>   		{<span class="string">"\u00d3"</span>,<span class="string">"O"</span>,<span class="string">"&amp;#211;"</span>},
+<a name="9" href="#9">9</a>   		{<span class="string">"\u00f3"</span>,<span class="string">"o"</span>,<span class="string">"&amp;#243;"</span>},
+<a name="10" href="#10">10</a>  		{<span class="string">"\u0104"</span>,<span class="string">"A"</span>,<span class="string">"&amp;#260;"</span>},
+<a name="11" href="#11">11</a>  	  	{<span class="string">"\u0105"</span>,<span class="string">"a"</span>,<span class="string">"&amp;#261;"</span>},
+<a name="12" href="#12">12</a>  	  	{<span class="string">"\u0106"</span>,<span class="string">"C"</span>,<span class="string">"&amp;#262;"</span>},
+<a name="13" href="#13">13</a>  	  	{<span class="string">"\u0107"</span>,<span class="string">"c"</span>,<span class="string">"&amp;#263;"</span>},
+<a name="14" href="#14">14</a>  	  	{<span class="string">"\u0118"</span>,<span class="string">"E"</span>,<span class="string">"&amp;#280;"</span>},
+<a name="15" href="#15">15</a>  	  	{<span class="string">"\u0119"</span>,<span class="string">"e"</span>,<span class="string">"&amp;#281;"</span>},
+<a name="16" href="#16">16</a>  	  	{<span class="string">"\u0141"</span>,<span class="string">"L"</span>,<span class="string">"&amp;#321;"</span>},	
+<a name="17" href="#17">17</a>  	  	{<span class="string">"\u0142"</span>,<span class="string">"l"</span>,<span class="string">"&amp;#322;"</span>},
+<a name="18" href="#18">18</a>  	  	{<span class="string">"\u0143"</span>,<span class="string">"N"</span>,<span class="string">"&amp;#323;"</span>},
+<a name="19" href="#19">19</a>  	  	{<span class="string">"\u0144"</span>,<span class="string">"n"</span>,<span class="string">"&amp;#324;"</span>},
+<a name="20" href="#20">20</a>  	  	{<span class="string">"\u015a"</span>,<span class="string">"S"</span>,<span class="string">"&amp;#346;"</span>},
+<a name="21" href="#21">21</a>  	  	{<span class="string">"\u015b"</span>,<span class="string">"s"</span>,<span class="string">"&amp;#347;"</span>},
+<a name="22" href="#22">22</a>  	  	{<span class="string">"\u0179"</span>,<span class="string">"Z"</span>,<span class="string">"&amp;#377;"</span>},
+<a name="23" href="#23">23</a>  	  	{<span class="string">"\u017a"</span>,<span class="string">"z"</span>,<span class="string">"&amp;#378;"</span>},
+<a name="24" href="#24">24</a>  	  	{<span class="string">"\u017b"</span>,<span class="string">"Z"</span>,<span class="string">"&amp;#379;"</span>},
+<a name="25" href="#25">25</a>  	  	{<span class="string">"\u017c"</span>,<span class="string">"z"</span>,<span class="string">"&amp;#380;"</span>},
+<a name="26" href="#26">26</a>  	  };
+<a name="27" href="#27">27</a>  	
+>>>>>>> a8f37de450466e1928b42638c3210ab44d96cca4:xref/gbc/i18n/pl/PolishTranscoder.html
 <a name="28" href="#28">28</a>  	@Override
 <a name="29" href="#29">29</a>  	<strong>protected</strong> String transcode(<strong>final</strong> String input, <strong>int</strong> sourceColumn, <strong>int</strong> destinationColumn) {
 <a name="30" href="#30">30</a>  		<strong>return</strong> transcode(input, UNICODE_TRANSCODE_TABLE, sourceColumn, destinationColumn);

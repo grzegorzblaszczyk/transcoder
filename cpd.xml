@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd-cpd>
 <duplication lines="30" tokens="227">
+<<<<<<< HEAD:cpd.xml
 <file line="18" path="/home/deer/workspace-3.5/transcoder/src/main/java/gbc/i18n/ru/RussianTranscoder.java"/>
 <file line="19" path="/home/deer/workspace-3.5/transcoder/src/main/java/gbc/i18n/ua/UkrainianTranscoder.java"/>
+=======
+<file line="18" path="/home/deer/workspace-sts/transcoder/src/main/java/gbc/i18n/ru/RussianTranscoder.java"/>
+<file line="19" path="/home/deer/workspace-sts/transcoder/src/main/java/gbc/i18n/ua/UkrainianTranscoder.java"/>
+>>>>>>> a8f37de450466e1928b42638c3210ab44d96cca4:cpd.xml
 <codefragment>
 <![CDATA[
 		{"\u0406","I","&#1030;"},
@@ -39,8 +44,13 @@
 </codefragment>
 </duplication>
 <duplication lines="24" tokens="185">
+<<<<<<< HEAD:cpd.xml
 <file line="50" path="/home/deer/workspace-3.5/transcoder/src/main/java/gbc/i18n/ru/RussianTranscoder.java"/>
 <file line="53" path="/home/deer/workspace-3.5/transcoder/src/main/java/gbc/i18n/ua/UkrainianTranscoder.java"/>
+=======
+<file line="50" path="/home/deer/workspace-sts/transcoder/src/main/java/gbc/i18n/ru/RussianTranscoder.java"/>
+<file line="53" path="/home/deer/workspace-sts/transcoder/src/main/java/gbc/i18n/ua/UkrainianTranscoder.java"/>
+>>>>>>> a8f37de450466e1928b42638c3210ab44d96cca4:cpd.xml
 <codefragment>
 <![CDATA[
 		{"\u0457","i","&#1111;"},
