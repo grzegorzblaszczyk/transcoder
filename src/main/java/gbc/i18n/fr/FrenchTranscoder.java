@@ -5,7 +5,7 @@ import gbc.i18n.AbstractTranscoder;
 
 public class FrenchTranscoder extends AbstractTranscoder {
 
-	private static final String[][] UNICODE_TRANSCODE_TABLE={
+	private static final String[][] UNICODE_TRANSCODE_TABLE = {
 
     {"\u00C0","A","&#192;"},
     {"\u00E0","a","&#224;"},

@@ -4,7 +4,7 @@ import gbc.i18n.AbstractTranscoder;
 
 public class UkrainianTranscoder extends AbstractTranscoder {
 
-	private static final String[][] UNICODE_TRANSCODE_TABLE={
+	private static final String[][] UNICODE_TRANSCODE_TABLE = {
 		{"\u0404","E","&#1028;"},
 		{"\u0410","A","&#1040;"},
 		{"\u0411","B","&#1041;"},

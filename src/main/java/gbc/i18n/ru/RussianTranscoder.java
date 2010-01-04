@@ -3,8 +3,8 @@ package gbc.i18n.ru;
 import gbc.i18n.AbstractTranscoder;
 
 public class RussianTranscoder extends AbstractTranscoder {
-	
-	private static final String[][] UNICODE_TRANSCODE_TABLE={
+
+	private static final String[][] UNICODE_TRANSCODE_TABLE = {
 		{"\u0410","A","&#1040;"},
 		{"\u0411","B","&#1041;"},
 		{"\u0412","V","&#1042;"},

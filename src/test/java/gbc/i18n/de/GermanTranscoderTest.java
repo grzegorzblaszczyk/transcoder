@@ -2,7 +2,6 @@ package gbc.i18n.de;
 
 import static org.junit.Assert.assertEquals;
 import gbc.i18n.AbstractTranscoderTest;
-import gbc.i18n.Transcoder;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +17,7 @@ public class GermanTranscoderTest extends AbstractTranscoderTest {
 		"\"Fix, Schwyz!\" quäkt Jürgen blöd vom Paß.",
 		"Falsches Üben von Xylophonmusik quält jeden größeren Zwerg"
 	};
-	
+
 	@Before
 	public void setUp() throws Exception {
 		transcoder = new GermanTranscoder();
@@ -35,5 +34,5 @@ public class GermanTranscoderTest extends AbstractTranscoderTest {
 		testEntitiesAndNative(transcoder, TEST_DATA, TEST_DATA_ENTITIES);
 		testPangrams(transcoder, PANGRAMS);
 	}
-	
+
 }

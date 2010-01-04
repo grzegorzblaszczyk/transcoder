@@ -7,7 +7,7 @@
   <artifactId>transcoder</artifactId>
   <name>Transcoder</name>
   <packaging>jar</packaging>
-  <version>1.3.1</version>
+  <version>1.4</version>
   <description>
   </description>
   <url>http://github.com/grzegorzblaszczyk/transcoder/</url>
@@ -39,7 +39,7 @@
     <connection>scm:git:git://github.com/grzegorzblaszczyk/transcoder.git</connection>
     <developerConnection>scm:git:git://git@github.com:grzegorzblaszczyk/transcoder.git</developerConnection>
   </scm>
-  
+
   <organization>
     <name>Grzegorz Błaszczyk Consulting</name>
     <url>http://www.blaszczyk-consulting.pl</url>
@@ -132,7 +132,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin> 
+      </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
@@ -149,7 +149,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
     </plugins>
     <extensions>
       <extension>
@@ -262,7 +262,7 @@
         <artifactId>maven-site-plugin</artifactId>
         <configuration>
           <locales>en</locales>
-          <!-- 
+          <!--
           <locales>pl,de,ua,ru,es,fr</locales>
           -->
           <inputEncoding>utf-8</inputEncoding>

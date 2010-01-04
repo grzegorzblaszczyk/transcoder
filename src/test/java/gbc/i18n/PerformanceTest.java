@@ -5,6 +5,7 @@ import gbc.i18n.de.GermanTranscoder;
 import gbc.i18n.es.SpanishTranscoder;
 import gbc.i18n.fr.FrenchTranscoder;
 import gbc.i18n.pl.PolishTranscoder;
+import gbc.i18n.ro.RomanianTranscoder;
 import gbc.i18n.ru.RussianTranscoder;
 import gbc.i18n.ua.UkrainianTranscoder;
 
@@ -33,6 +34,7 @@ public class PerformanceTest {
 	  transcoders.add(new PolishTranscoder());
 	  transcoders.add(new RussianTranscoder());
 	  transcoders.add(new UkrainianTranscoder());
+	  transcoders.add(new RomanianTranscoder());
 	}
 
 	@After

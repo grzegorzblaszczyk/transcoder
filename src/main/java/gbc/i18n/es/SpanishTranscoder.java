@@ -5,7 +5,7 @@ import gbc.i18n.AbstractTranscoder;
 
 public class SpanishTranscoder extends AbstractTranscoder {
 
-	private static final String[][] UNICODE_TRANSCODE_TABLE={
+	private static final String[][] UNICODE_TRANSCODE_TABLE = {
 
 		//accent acutes
 		{"\u00C1","A","&#193;"},
