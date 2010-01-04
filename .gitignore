@@ -1,8 +1,8 @@
 target
-target/* # Ignore target dir
+target/*
 log
-log/* #Ignore log dir
+log/*
 cobertura.ser
 *.log
 *.class
-!.gitignore # except for .gitignore
+!.gitignore
