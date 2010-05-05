@@ -4,17 +4,14 @@ import org.apache.commons.lang.StringUtils;
 
 public abstract class AbstractTranscoder implements Transcoder {
 
-	@Override
 	public String fromEntitiesToNative(final String input) {
 		return transcode(input, 2, 0);
 	}
 
-	@Override
 	public String fromNativeToEntities(final String input) {
 		return transcode(input, 0, 2);
 	}
 
-	@Override
 	public String decode(final String input) {
 		String output = input;
 		output = transcode(output, 0, 1);

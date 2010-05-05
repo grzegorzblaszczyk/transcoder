@@ -1,6 +1,7 @@
 package gbc.i18n;
 
 import static org.junit.Assert.assertTrue;
+import gbc.i18n.cz.CzechTranscoder;
 import gbc.i18n.de.GermanTranscoder;
 import gbc.i18n.es.SpanishTranscoder;
 import gbc.i18n.fr.FrenchTranscoder;
@@ -35,6 +36,7 @@ public class PerformanceTest {
 	  transcoders.add(new RussianTranscoder());
 	  transcoders.add(new UkrainianTranscoder());
 	  transcoders.add(new RomanianTranscoder());
+	  transcoders.add(new CzechTranscoder());
 	}
 
 	@After
