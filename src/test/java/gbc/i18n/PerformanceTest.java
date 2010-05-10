@@ -8,6 +8,7 @@ import gbc.i18n.fr.FrenchTranscoder;
 import gbc.i18n.pl.PolishTranscoder;
 import gbc.i18n.ro.RomanianTranscoder;
 import gbc.i18n.ru.RussianTranscoder;
+import gbc.i18n.sk.SlovakTranscoder;
 import gbc.i18n.ua.UkrainianTranscoder;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class PerformanceTest {
 	  transcoders.add(new UkrainianTranscoder());
 	  transcoders.add(new RomanianTranscoder());
 	  transcoders.add(new CzechTranscoder());
+	  transcoders.add(new SlovakTranscoder());
 	}
 
 	@After
