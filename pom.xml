@@ -7,7 +7,7 @@
   <artifactId>transcoder</artifactId>
   <name>Transcoder</name>
   <packaging>jar</packaging>
-  <version>1.5</version>
+  <version>1.6</version>
   <description>
   </description>
   <url>http://github.com/grzegorzblaszczyk/transcoder/</url>
