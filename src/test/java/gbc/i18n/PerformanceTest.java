@@ -5,6 +5,7 @@ import gbc.i18n.cz.CzechTranscoder;
 import gbc.i18n.de.GermanTranscoder;
 import gbc.i18n.es.SpanishTranscoder;
 import gbc.i18n.fr.FrenchTranscoder;
+import gbc.i18n.is.IcelandicTranscoder;
 import gbc.i18n.pl.PolishTranscoder;
 import gbc.i18n.ro.RomanianTranscoder;
 import gbc.i18n.ru.RussianTranscoder;
@@ -41,6 +42,7 @@ public class PerformanceTest {
 	  transcoders.add(new CzechTranscoder());
 	  transcoders.add(new SlovakTranscoder());
 	  transcoders.add(new SlovenianTranscoder());
+	  transcoders.add(new IcelandicTranscoder());
 	}
 
 	@After
@@ -90,7 +92,7 @@ public class PerformanceTest {
 	private void assertTime(long start, long end) {
 		long timeDiff = (end - start);
 		double executionTime = (timeDiff / (EXECUTION_COUNT));
-		System.out.println("Test duration: " + timeDiff
+		logger.info("Test duration: " + timeDiff
 				+ " ms , single execution time: " + executionTime + " ms");
 		assertTrue("Decoding is too slow !!!!!! \n It should be less than "
 				+ MAXIMUM_EXECUTION_TIME_IN_MILLIS + " ms.",

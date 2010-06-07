@@ -7,7 +7,7 @@
   <artifactId>transcoder</artifactId>
   <name>Transcoder</name>
   <packaging>jar</packaging>
-  <version>1.6</version>
+  <version>1.7</version>
   <description>
   </description>
   <url>http://github.com/grzegorzblaszczyk/transcoder/</url>
@@ -54,9 +54,9 @@
 
   <distributionManagement>
     <repository>
-      <id>empik-atm</id>
-      <name>Empik ATM Maven repository</name>
-      <url>scp://77.79.217.249/var/www/app-stg1.empik.pl/maven2</url>
+      <id>gbc</id>
+      <name>GBC  Maven repository</name>
+      <url>http://blaszczyk-consulting.pl/maven2</url>
     </repository>
   </distributionManagement>
 
