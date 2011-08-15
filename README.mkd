@@ -3,6 +3,7 @@
 Transcoder is a set of simple Java classes ready to use. These classes are meant to be reused in other applications, so they are POJOs without any state or persistence involved.
 
 You can decode UTF-8 strings to Latin characters in:
+
 * Polish
 * Russian
 * Ukrainian
@@ -16,6 +17,7 @@ You can decode UTF-8 strings to Latin characters in:
 * Icelandic
 
 and transcode UTF-8 characters to HTML entities and HTML entities back to UTF-8 characters in:
+
 * Russian
 * Ukrainian
 * Romanian
