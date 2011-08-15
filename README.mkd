@@ -1,0 +1,58 @@
+# README 
+
+Transcoder is a set of simple Java classes ready to use. These classes are meant to be reused in other applications, so they are POJOs without any state or persistence involved.
+
+You can decode UTF-8 strings to Latin characters in:
+* Polish
+* Russian
+* Ukrainian
+* Romanian
+* German
+* Spanish
+* French
+* Czech
+* Slovak
+* Slovenian
+* Icelandic
+
+and transcode UTF-8 characters to HTML entities and HTML entities back to UTF-8 characters in:
+* Russian
+* Ukrainian
+* Romanian
+* Polish
+* German
+* Spanish
+* French
+* Slovak
+* Slovenian
+* Icelandic
+
+## EXAMPLE
+
+```java
+mport gbc.i18n.pl.PolishTranscoder;
+public class SimpleExample {
+
+  /**
+   * Showcase
+   * @param args
+   */
+  public static void main(String[] args) {
+
+    // START SNIPPET: usage
+
+    // Polish
+    PolishTranscoder polish = new PolishTranscoder();
+    System.out.println(polish.decode("Pchnąć w tę łódź jeża lub ośm skrzyń fig")); // result: Pchnac w te lodz jeza lub osm skrzyn fig
+    System.out.println(polish.fromNativeToEntities("Pchnąć w tę łódź jeża lub ośm skrzyń fig")); // result: Pchn&#261;&#263; w t&#281; &#322;&#243;d&#378; je&#380;a lub o&#347;m skrzy&#324; fig
+    System.out.println(polish.fromEntitiesToNative("Pchn&#261;&#263; w t&#281; &#322;&#243;d&#378; je&#380;a lub o&#347;m skrzy&#324; fig")); // result: Pchnąć w tę łódź jeża lub ośm skrzyń fig
+   }
+}
+``
+
+
+## LICENSE
+The transcoder library is licensed under MIT license.
+
+
+
