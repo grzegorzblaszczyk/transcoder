@@ -166,6 +166,14 @@
         <activation>
             <activeByDefault>true</activeByDefault>
         </activation>
+        <repositories>
+            <repository>
+                <id>jboss-repository</id>
+                <name>JBoss Repository for Maven</name>
+                <url>https://repository.jboss.org/nexus/content/repositories/root_repository/maven2/</url>
+                <layout>default</layout>
+            </repository>
+        </repositories>
     </profile>
   </profiles>
 
@@ -184,7 +192,7 @@
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <version>1.2.15</version>
+      <version>1.2.16</version>
       <scope>test</scope>
     </dependency>
 
