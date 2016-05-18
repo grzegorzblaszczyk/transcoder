@@ -1,5 +1,7 @@
 # README 
 
+## Transcoder
+
 Transcoder is a set of simple Java classes ready to use. These classes are meant to be reused in other applications, so they are POJOs without any state or persistence involved.
 
 You can decode UTF-8 strings to Latin characters in:
