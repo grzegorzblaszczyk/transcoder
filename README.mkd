@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/grzegorzblaszczyk/transcoder.svg?branch=master)](https://travis-ci.org/grzegorzblaszczyk/transcoder)
+
 # README 
 
 ## Transcoder
